@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <% if flash[:error] %>
+      <%flash[:error] %>
+      <% end %>
+      <form action="/login" method="post">
+        <input type="email" name="user[email]" placeholder="  Email" ></br>
+        <input type="password" name="user[password]" placeholder = "Create a password"></br>
+        <input type="submit" value="Sign up"></br>
+
+      </form>
+
+
+    <h1></h1>
+
+
+  </body>
+</html>

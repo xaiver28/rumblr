@@ -1,0 +1,16 @@
+<h1>Sign Up</h1>
+<% if flash[:error] %>
+<ol>
+<% flash[:error].each do |error| %>
+<li><%=error%></li>
+invalid input
+<% end %>
+</ol>
+
+<form action="/signup" method="POST">
+  <input type="text" name="user[name]" placeholder="  Name" ></br>
+  <input type="email" name="user[email]" placeholder="  Email" ></br>
+  <input type="password" name="user[password]" placeholder = "Create a password"></br>
+  <input type="submit" value="Sign up"></br>
+
+</form>
