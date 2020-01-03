@@ -5,18 +5,19 @@
     <title></title>
   </head>
   <body>
+
+
+
     <% if flash[:error] %>
       <%flash[:error] %>
       <% end %>
       <form action="/login" method="post">
-        <input type="email" name="user[email]" placeholder="  Email" ></br>
-        <input type="password" name="user[password]" placeholder = "Create a password"></br>
-        <input type="submit" value="Sign up"></br>
+        <input type="email" name="email" placeholder="  Email" ></br>
+        <input type="password" name="password" placeholder = "Enter password"></br>
+        <input type="submit" value="Login"></br>
 
       </form>
 
-
-    <h1></h1>
 
 
   </body>

@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
 <h1>Sign Up</h1>
 <% if flash[:error] %>
 <ol>
@@ -6,11 +14,22 @@
 invalid input
 <% end %>
 </ol>
+<% end %>
 
 <form action="/signup" method="POST">
-  <input type="text" name="user[name]" placeholder="  Name" ></br>
+  <input type="text" name="user[first_name]" placeholder="First Name " ></br>
+  <input type="text" name="user[last_name]" placeholder="Last Name " ></br>
+  <input type="text" name="user[birthday]" placeholder="D.O.B" ></br>
   <input type="email" name="user[email]" placeholder="  Email" ></br>
   <input type="password" name="user[password]" placeholder = "Create a password"></br>
   <input type="submit" value="Sign up"></br>
 
 </form>
+
+
+
+  </head>
+  <body>
+
+  </body>
+</html>

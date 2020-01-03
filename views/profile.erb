@@ -1,2 +1,23 @@
-<h1> <% = session [:user_id] %> </h1>
-<h4>Profile </h4>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+
+<h1> <% session[:user_id] %> </h1>
+<h1> <%   user = User.find_by(id:session[:user_id]) %> </h1>
+<h1> <%= "Welcome #{user.first_name }, what's on your mind today?" %> </h1>
+
+<h2>Post your blog!</h2>
+<form class="blog-form" action="/blogs" method="post">
+ <input type="text" name="blog[title]" placeholder="Enter your blog’s title…"><br>
+ <textarea name="blog[content]" rows="8" cols="80"></textarea>
+ <input type="submit" value="Post">
+</form>
+
+</body>
+</html>

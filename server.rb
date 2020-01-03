@@ -41,9 +41,7 @@ post '/login' do
     session[:user_id] = user.id
     redirect '/profile'
   else
-    flash[:error] = "Correct email, but wrong password. Did you mean:
-     #{user.password}? \
-    Only use this password if that is your account."
+    flash[:error] = "Invalid Email or Password"
     redirect "/login"
   end
 end
@@ -63,4 +61,16 @@ get '/logout' do
   # erb :logout
   redirect '/login'
   "You are now logged out"
+end
+
+get '/blogs' do
+  erb :blogs
+end
+
+post '/blogs' do
+  blog= Blog.new(params["blog"])
+  if blog.save
+    redirect 'profile'
+
+end
 end
