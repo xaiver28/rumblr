@@ -5,19 +5,26 @@
   <title></title>
 </head>
 
-<nav>
+<!-- <nav>
   <a href="/">Home</a>
   <a href="/signup">Sign up </a>
   <a href="/login">Log in</a>
   <a href="/logout">Logout</a>
 </nav>
-
+ -->
 
 
 <body>
-<%= @blog.title %>
-<%= @blog.content %>
-<%= @blog.user_id %>
+
+  <% if  @blog != nil%>
+    <% for post in @blog.reverse %>
+    <% if post != nil%>
+      <h1><%= post.title %></h1>
+      <p><%= post.content %></p>
+
+    <% end %>
+    <% end %>
+    <% end %>
 
 </body>
 </html>

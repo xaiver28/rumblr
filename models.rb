@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
 
 end
 class Post <ActiveRecord::Base
-validates :title, :content, length: {maximum:300}
+validates :title, :content, :user_id, length: {maximum:300}
 end

@@ -71,17 +71,20 @@ end
 get '/blogs' do
   erb :blogs
 end
+
 get '/show' do
+  @blog = Post.all
   erb :show
 end
 
 post '/blogs' do
-  @post= Post.new(params[:blog])
+  @post= Post.new(title: params[:blog]['title'], content: params[:blog]['content'],user_id: session[:user_id])
   if @post.valid?
     @post.save
     redirect '/show'
   else
     erb :profile
+
 
 
 end
