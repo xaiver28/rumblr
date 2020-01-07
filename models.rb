@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
 end
-class User <ActiveRecord::Base
-
+class Post <ActiveRecord::Base
+validates :title, :content, length: {maximum:300}
 end

@@ -2,9 +2,14 @@ require 'sinatra/activerecord'
 require 'sinatra'
 require 'sinatra/flash'
 require './models'
+require 'pg'
 
 set :port, 3000
-set :database, {adapter: "sqlite3", database: "rumblr.sqlite3"}
+set :database, { adapter: 'postgresql',
+                 database: 'rumblr',
+                 username: 'postgres',
+                 password: ENV['POSTGRES_PW']
+               }
 enable :sessions
 
 
@@ -66,11 +71,18 @@ end
 get '/blogs' do
   erb :blogs
 end
+get '/show' do
+  erb :show
+end
 
 post '/blogs' do
-  blog= Blog.new(params["blog"])
-  if blog.save
-    redirect 'profile'
+  @post= Post.new(params[:blog])
+  if @post.valid?
+    @post.save
+    redirect '/show'
+  else
+    erb :profile
+
 
 end
 end
