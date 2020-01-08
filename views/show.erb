@@ -16,15 +16,24 @@
 
 <body>
 
-  <% if  @blog != nil%>
-    <% for post in @blog.reverse %>
-    <% if post != nil%>
-      <h1><%= post.title %></h1>
-      <p><%= post.content %></p>
+    <a class="my_profile" href="/profile">My Profile</a>
 
+<div class="posts">
+
+    <% @posts.each do |post| %>
+    <div class="content">
+
+
+      <p style="font-weight:bold;"><%= post.title %></p>
+      <h1><%= post.content %></h1>
+
+    <p> <%= "Posted by, #{post.user.first_name} #{post.user.last_name}." %> </p>
+  </div>
     <% end %>
-    <% end %>
-    <% end %>
+
+
+
+  </div>
 
 </body>
 </html>

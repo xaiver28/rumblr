@@ -5,12 +5,18 @@
     <title></title>
   </head>
   <body>
+    <style>
+body {
+  background-image: url('https://maggamer.com/wp-content/uploads/2018/07/website-backgrounds-texture-elegant-abstract-patterns-hexagons-textures-backgrounds-honey-b-of-website-backgrounds-texture.jpg');
+}
+</style>
 
 
 
     <% if flash[:error] %>
       <%flash[:error] %>
       <% end %>
+      <div class="login_form">
       <form action="/login" method="post">
         <input type="email" name="email" placeholder="  Email" ></br>
         <input type="password" name="password" placeholder = "Enter password"></br>
@@ -18,7 +24,7 @@
 
       </form>
 
-
+</div>
 
   </body>
 </html>

@@ -5,7 +5,32 @@
     <title></title>
   </head>
   <body>
-    
+    <style>
+body {
+  background-image: url('https://maggamer.com/wp-content/uploads/2018/07/website-backgrounds-texture-elegant-abstract-patterns-hexagons-textures-backgrounds-honey-b-of-website-backgrounds-texture.jpg');
+}
+</style>
+<a class="my_profile" href="/profile">My Profile</a>
+
+        <% if flash[:error] %>
+          <%flash[:error] %>
+          <% end %>
+
+          <div class= "home_form">
+          <form action="/login" method="post">
+            <input type="email" name="email" placeholder="  Email" ></br>
+            <input type="password" name="password" placeholder = "Enter password"></br>
+            <input type="submit" value="Login"></br>
+
+          </form>
+          </div>
+
+          <div class="gifs">
+            <img src="" alt="">
+
+          </div>
+
+
 
 
 </body>

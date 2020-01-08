@@ -1,0 +1,189 @@
+body{
+  font-family: sans-serif;
+  margin:0;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding: 16px 40px;
+
+}
+
+li a:hover {
+  background-color: #42f581;
+  border-radius:50%;
+  transition-duration: 1s;
+}
+
+/* design for list stops here */
+
+.active {
+  background-color: #4CAF50;
+}
+
+/*
+navbar styling */
+.home{
+  background-color: #23c7d9;
+  border-radius:50%
+
+}
+.signup{
+
+  background-color: #23c7d9;
+  border-radius:50%
+
+
+
+}
+
+.logout{
+  float: right;
+  background-color:#23c7d9 ;
+  border-radius:50%;
+}
+
+li a logout:hover{
+  background-color:#f54e4e;
+  border-radius:50%;
+  transition-duration: 1s;
+}
+
+
+form input {
+
+  border-radius: 50px;
+}
+input[type=text], input[type=password],input[type=date],input[type=email]  {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 2px solid;
+  border-color:yellow;
+  background: skyblue;
+  align:center;
+}
+
+input[type=submit]{
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+input[type=submit]:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+
+/* #form{
+background-color:#f5d64e;
+margin: 5% 30%;
+opacity: 0;
+
+} */
+
+.home_form{
+text-align: center;
+margin-top: 14%;
+
+}
+.login_form{
+  text-align: center;
+  margin-top: 14%;
+
+}
+
+.feed{
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+
+}
+.feed:hover {
+  background-color: #42f581;
+  color: white;
+}
+.blog{
+  text-align: center;
+}
+.content{
+border: 2px solid;
+border-right: right;
+padding-top: 4px;
+padding-bottom: 4px;
+margin: 4% 5%;
+border-radius:50px;
+
+}
+
+
+
+
+.posts{
+  text-align: center;
+}
+
+
+.my_profile{
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.my_profile:hover {
+  background-color: #42f581;
+  color: white;
