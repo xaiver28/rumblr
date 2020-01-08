@@ -73,7 +73,7 @@ get '/blogs' do
 end
 
 get '/show' do
-  @blog = Post.all
+  @posts = Post.order(created_at: :desc).all
   erb :show
 end
 

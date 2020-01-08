@@ -20,35 +20,19 @@
 
 <div class="posts">
 
-  <% if  @blog != nil%>
-    <% for post in @blog.reverse %>
-    <% if post != nil%>
+    <% @posts.each do |post| %>
     <div class="content">
 
 
       <p style="font-weight:bold;"><%= post.title %></p>
       <h1><%= post.content %></h1>
 
-    <p> <% session[:user_id] %> </p>
-    <p> <%   user = User.find_by(id:session[:user_id]) %> </p>
-    <p> <%= "Posted by, #{user.first_name} #{user.last_name}." %> </p>
+    <p> <%= "Posted by, #{post.user.first_name} #{post.user.last_name}." %> </p>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
     <% end %>
-    <% end %>
-    <% end %>
+
+
+
   </div>
 
 </body>

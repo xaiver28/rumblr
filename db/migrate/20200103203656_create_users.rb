@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.date :birthday
       t.string :email
       t.string :password
+      t.datetime :created_at
+      t.datetime :updated_at
     end
   end
 end
