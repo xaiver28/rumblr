@@ -84,8 +84,5 @@ post '/blogs' do
     redirect '/show'
   else
     erb :profile
-
-
-
 end
 end

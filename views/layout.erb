@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/signup">Sign up </a>
-      <a href="/login">Log in</a>
-      <a href="/logout">Logout</a>
+      <ul>
 
+      <li class="home"><a href="/">Home</a></li>
+      <li class="signup"><a href="/signup">Sign up </a></li>
+      <!-- <li><a href="/login">Log in</a></li> -->
+      <li class="logout"><a href="/logout">Logout</a></li>
+      </ul>
 
-
-    </nav>
     <%= yield %>
 
   </body>

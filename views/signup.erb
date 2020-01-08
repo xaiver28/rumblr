@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="form">
+  <h1 style="text-align:center; color:#ff8800;">Sign Up</h1>
+  <% if flash[:error] %>
+  <ol>
+    <% flash[:error].each do |error| %>
+    <li><%=error%></li>
+    invalid input
+    <% end %>
+  </ol>
+  <% end %>
 
-<h1>Sign Up</h1>
-<% if flash[:error] %>
-<ol>
-<% flash[:error].each do |error| %>
-<li><%=error%></li>
-invalid input
-<% end %>
-</ol>
-<% end %>
+  <form style="text-align: center;" action="/signup" method="POST">
+    <input type="text" name="user[first_name]" placeholder="First Name " ></br>
+    <input type="text" name="user[last_name]" placeholder="Last Name " ></br>
+    <input type="date" name="user[birthday]" placeholder="Birthday" ></br>
+    <input type="email" name="user[email]" placeholder="  Email" ></br>
+    <input type="password" name="user[password]" placeholder = "Create a password"></br>
+    <input type="submit" value="Sign up"></br>
 
-<form action="/signup" method="POST">
-  <input type="text" name="user[first_name]" placeholder="First Name " ></br>
-  <input type="text" name="user[last_name]" placeholder="Last Name " ></br>
-  <input type="date" name="user[birthday]" placeholder="D.O.B" ></br>
-  <input type="email" name="user[email]" placeholder="  Email" ></br>
-  <input type="password" name="user[password]" placeholder = "Create a password"></br>
-  <input type="submit" value="Sign up"></br>
+  </form>
+  </div>
 
-</form>
+
+  <style>
+body {
+background-image: url('https://maggamer.com/wp-content/uploads/2018/07/website-backgrounds-texture-elegant-abstract-patterns-hexagons-textures-backgrounds-honey-b-of-website-backgrounds-texture.jpg');
+}
+</style>
 
 
 
-  </head>
-  <body>
+</head>
+<body>
 
-  </body>
+</body>
 </html>
