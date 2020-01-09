@@ -9,10 +9,13 @@ set :database, { adapter: 'postgresql',
                  database: 'rumblr',
                  username: 'postgres',
                  password: ENV['POSTGRES_PW']
-               end
+end
+
+
 configure :production do
-set :database, {url: ENV['DATABASE_URL']}
-end}
+  set :database, {url: ENV['DATABASE_URL']}
+end
+
 
 
 enable :sessions
