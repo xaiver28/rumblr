@@ -8,7 +8,7 @@ configure :development do
 set :database, { adapter: 'postgresql',
                  database: 'rumblr',
                  username: 'postgres',
-                 password: ENV['POSTGRES_PW']
+                 password: ENV['POSTGRES_PW']}
 end
 
 
