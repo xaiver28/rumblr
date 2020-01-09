@@ -4,12 +4,17 @@ require 'sinatra/flash'
 require './models'
 require 'pg'
 
-set :port, 3000
+configure :development do
 set :database, { adapter: 'postgresql',
                  database: 'rumblr',
                  username: 'postgres',
                  password: ENV['POSTGRES_PW']
-               }
+               end
+configure :production do
+set :database, {url: ENV['DATABASE_URL']}
+end}
+
+
 enable :sessions
 
 
