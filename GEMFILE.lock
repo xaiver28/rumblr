@@ -47,6 +47,7 @@ PLATFORMS
 DEPENDENCIES
   pg
   rake
+  sinatra
   sinatra-activerecord
   sinatra-flash
   sqlite3
