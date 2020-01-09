@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra/activerecord'
 require 'sinatra'
 require 'sinatra/flash'
@@ -5,21 +7,17 @@ require './models'
 require 'pg'
 
 configure :development do
-set :database, { adapter: 'postgresql',
+  set :database, adapter: 'postgresql',
                  database: 'rumblr',
                  username: 'postgres',
-                 password: ENV['POSTGRES_PW']}
+                 password: ENV['POSTGRES_PW']
 end
-
 
 configure :production do
-  set :database, {url: ENV['DATABASE_URL']}
+  set :database, url: ENV['DATABASE_URL']
 end
 
-
-
 enable :sessions
-
 
 get '/' do
   erb :home
@@ -42,7 +40,6 @@ post '/signup' do
   p params
 end
 
-
 get '/login' do
   erb :login
 end
@@ -50,26 +47,26 @@ end
 post '/login' do
   user = User.find_by(email: params[:email])
   given_password = params[:password]
-if @user.valid?
-  if user.password == given_password
-    session[:user_id] = user.id
-    redirect '/profile'
-   else
-     flash[:error] = "Invalid Email or Password"
-     redirect "/login"
-   end
-
+  if user.valid?
+    if user.password == given_password
+      session[:user_id] = user.id
+      redirect '/profile'
+    else
+      flash[:error] = 'Invalid Password'
+      redirect '/login'
+     end
+  else
+    flash[:error] = 'Invalid Email'
+    redirect '/login'
+  end
 end
-
-end
-
 
 get '/profile' do
-  if session[:user_id] == nil
+  if session[:user_id].nil?
     redirect '/login'
   else
-  # @user=User.find(params[:email])
-  erb :profile
+    # @user=User.find(params[:email])
+    erb :profile
 end
 end
 
@@ -77,7 +74,7 @@ get '/logout' do
   session[:user_id] = nil
   # erb :logout
   redirect '/login'
-  "You are now logged out"
+  'You are now logged out'
 end
 
 get '/blogs' do
@@ -90,7 +87,7 @@ get '/show' do
 end
 
 post '/blogs' do
-  @post= Post.new(title: params[:blog]['title'], content: params[:blog]['content'],user_id: session[:user_id])
+  @post = Post.new(title: params[:blog]['title'], content: params[:blog]['content'], user_id: session[:user_id])
   if @post.valid?
     @post.save
     redirect '/show'
