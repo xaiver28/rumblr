@@ -55,10 +55,10 @@ if @user.valid?
   if user.password == given_password
     session[:user_id] = user.id
     redirect '/profile'
-  else
-    flash[:error] = "Invalid Email or Password"
-    redirect "/login"
-  end
+  # else
+  #   flash[:error] = "Invalid Email or Password"
+  #   redirect "/login"
+  # end
 
 end
 
