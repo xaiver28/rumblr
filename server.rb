@@ -58,7 +58,7 @@ if @user.valid?
   # else
   #   flash[:error] = "Invalid Email or Password"
   #   redirect "/login"
-  # end
+   end
 
 end
 
