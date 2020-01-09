@@ -10,7 +10,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: blue;
+  background-color: 2Ftransparent;
   position: sticky;
   top: 0;
 }
@@ -68,6 +68,9 @@ li a logout:hover{
   border-radius:50%;
   transition-duration: 1s;
 }
+#form{
+  padding-top: 70px;
+}
 
 
 form input {
@@ -95,12 +98,12 @@ input[type=submit]{
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
   cursor: pointer;
 
 }
 input[type=submit]:hover {
-  background-color: #4CAF50;
+  background-color: #ff8800;
   color: white;
 }
 
@@ -187,3 +190,11 @@ border-radius:50px;
 .my_profile:hover {
   background-color: #42f581;
   color: white;
+}
+
+
+.homebg{
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}

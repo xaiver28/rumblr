@@ -42,6 +42,8 @@ end
 post '/login' do
   user = User.find_by(email: params[:email])
   given_password = params[:password]
+if @user.valid?
+  # @user.save
   if user.password == given_password
     session[:user_id] = user.id
     redirect '/profile'
@@ -49,6 +51,9 @@ post '/login' do
     flash[:error] = "Invalid Email or Password"
     redirect "/login"
   end
+
+end
+
 end
 
 
