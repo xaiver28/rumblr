@@ -8,9 +8,9 @@ require 'pg'
 
 configure :development do
   set :database, adapter: 'postgresql',
-                 database: 'rumblr',
-                 username: 'postgres',
-                 password: ENV['POSTGRES_PW']
+  database: 'rumblr',
+  username: 'postgres',
+  password: ENV['POSTGRES_PW']
 end
 
 configure :production do
@@ -54,7 +54,7 @@ post '/login' do
     else
       flash[:error] = 'Invalid Password'
       redirect '/login'
-     end
+    end
   else
     flash[:error] = 'Invalid Email'
     redirect '/login'
@@ -67,7 +67,7 @@ get '/profile' do
   else
     # @user=User.find(params[:email])
     erb :profile
-end
+  end
 end
 
 get '/logout' do
@@ -93,5 +93,5 @@ post '/blogs' do
     redirect '/show'
   else
     erb :profile
-end
+  end
 end
